@@ -1,0 +1,24 @@
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\bin\Debug\net8.0-windows\winball501's antivirus test tool.exe
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\bin\Debug\net8.0-windows\winball501's antivirus test tool.deps.json
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\bin\Debug\net8.0-windows\winball501's antivirus test tool.runtimeconfig.json
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\bin\Debug\net8.0-windows\winball501's antivirus test tool.dll
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\bin\Debug\net8.0-windows\winball501's antivirus test tool.pdb
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\bin\Debug\net8.0-windows\Microsoft.WindowsAPICodePack.dll
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\bin\Debug\net8.0-windows\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\winball501's antivirus test tool.csproj.AssemblyReference.cache
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\winball501's antivirus test tool_MarkupCompile.cache
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\winball501's antivirus test tool_MarkupCompile.lref
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\winball501's antivirus test tool.g.resources
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\winball501's antivirus test tool.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\winball501's antivirus test tool.AssemblyInfoInputs.cache
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\winball501's antivirus test tool.AssemblyInfo.cs
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\winball501's antivirus test tool.csproj.CoreCompileInputs.cache
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\winball5.ACA1E5E8.Up2Date
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\winball501's antivirus test tool.dll
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\refint\winball501's antivirus test tool.dll
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\winball501's antivirus test tool.pdb
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\winball501's antivirus test tool.genruntimeconfig.cache
+C:\Users\winball501\source\repos\winball501's antivirus test tool\winball501's antivirus test tool\obj\Debug\net8.0-windows\ref\winball501's antivirus test tool.dll
