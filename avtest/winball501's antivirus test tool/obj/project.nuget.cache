@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "dgSpecHash": "6TtYILE8u2w=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\winba\\Downloads\\Compressed\\AV-test-tool-main_1\\AV-test-tool-main\\avtest\\winball501's antivirus test tool\\winball501's antivirus test tool.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\winba\\.nuget\\packages\\windowsapicodepack-core\\1.1.1\\windowsapicodepack-core.1.1.1.nupkg.sha512",
+    "C:\\Users\\winba\\.nuget\\packages\\windowsapicodepack-shell\\1.1.1\\windowsapicodepack-shell.1.1.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'WindowsAPICodePack-Core 1.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\winba\\Downloads\\Compressed\\AV-test-tool-main_1\\AV-test-tool-main\\avtest\\winball501's antivirus test tool\\winball501's antivirus test tool.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\winba\\Downloads\\Compressed\\AV-test-tool-main_1\\AV-test-tool-main\\avtest\\winball501's antivirus test tool\\winball501's antivirus test tool.csproj",
+      "libraryId": "WindowsAPICodePack-Core",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'WindowsAPICodePack-Shell 1.1.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\winba\\Downloads\\Compressed\\AV-test-tool-main_1\\AV-test-tool-main\\avtest\\winball501's antivirus test tool\\winball501's antivirus test tool.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\winba\\Downloads\\Compressed\\AV-test-tool-main_1\\AV-test-tool-main\\avtest\\winball501's antivirus test tool\\winball501's antivirus test tool.csproj",
+      "libraryId": "WindowsAPICodePack-Shell",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
+}
