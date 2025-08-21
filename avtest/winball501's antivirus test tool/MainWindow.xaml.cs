@@ -128,7 +128,7 @@ namespace winball501_s_antivirus_test_tool
                         accessDeniedLabel.Text = $"Not Executed May Blocked By Antivirus: {notexecuted}";
                         double progress = ((double)notexecuted / totalFiles) * 100;
                         progressBar.Value = progress;
-                        percentageText.Text = $"{progress:0}%";
+                        percentageText.Text = $"{progress:0.00}%";
                         ScrollListBoxToBottomIfNeeded();
                     }));
                     if(slowModeCheckBox.IsChecked == true)
