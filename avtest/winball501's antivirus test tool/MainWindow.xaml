@@ -1,0 +1,100 @@
+﻿<Window x:Class="winball501_s_antivirus_test_tool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:winball501_s_antivirus_test_tool"
+        mc:Ignorable="d"
+        Title="Winball501's Antivirus Test Tool 1.2" Height="650" Width="1500"
+        Background="#2C2F37" FontFamily="Segoe UI">
+
+    <Window.Resources>
+      
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Padding" Value="20,10"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#388E3C"/>
+            <Setter Property="BorderBrush" Value="#555555"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="250"/>
+        </Style>
+
+      
+        <Style TargetType="ProgressBar">
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Background" Value="#444444"/>
+            <Setter Property="Foreground" Value="#66BB6A"/>
+            <Setter Property="BorderBrush" Value="#444444"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="0,10"/>
+        </Style>
+
+       
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+ 
+        <ProgressBar Name="progressBar" Height="25" Grid.Row="0" Grid.Column="1" Margin="0,10"
+                     Foreground="#66BB6A" Background="#444444" IsIndeterminate="False" Value="0" Width="200"/>
+ 
+        <TextBlock Name="percentageText" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0"
+                   FontSize="18" FontWeight="Bold" Foreground="#66BB6A" Text="0%" Grid.Row="0" Grid.Column="2"/>
+ 
+        <TextBlock Name="filesExecutedLabel" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Margin="0,10,0,0" FontWeight="Bold" Foreground="#DDDDDD" Text="Executed Successfully: 0 / 0" Grid.Row="1" Grid.Column="1"/>
+ 
+        <TextBlock Name="accessDeniedLabel" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Margin="0,10,0,0" FontWeight="Bold" Foreground="#FF3B30" Text="Not Executed May Blocked By Antivirus: 0" Grid.Row="2" Grid.Column="1"/>
+
+
+ 
+        <ListBox Name="fileListBox" FontSize="14" Foreground="White" Background="#222222"
+                 Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Padding="10" Margin="0,179,0,19"/>
+
+     
+        <TextBlock Name="directoryLabel" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"
+                   FontSize="14" FontWeight="Bold" Foreground="#DDDDDD" Text="No directory selected" Grid.Row="4" Grid.Column="1"/>
+ 
+        <Button Name="addPathButton" Content="Add Path" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Grid.Row="1" Grid.Column="0" Click="AddPathButton_Click"/>
+
+        
+        <Button Name="makeExecutableButton" Content="Make All Files Executable" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Grid.Row="2" Grid.Column="0" Click="MakeExecutableButton_Click"/>
+
+       
+        <Button Name="resetButton" Content="Reset" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Grid.Row="1" Grid.Column="2" Click="ResetButton_Click"/>
+
+     
+        <Button Name="clearListButton" Content="Clear List" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Grid.Row="2" Grid.Column="2" Click="ClearListButton_Click"/>
+        <Button Name="startExecuteButton" Content="Start Execute" VerticalAlignment="Top"
+                Grid.Row="3" Grid.Column="1" Click="StartExecuteButton_Click" Margin="0,107,0,0"/>
+        <CheckBox Name="slowModeCheckBox" IsChecked="true" Content="Enable Slow Execution Mode" VerticalAlignment="Top" HorizontalAlignment="Center"
+                  Grid.Row="3" Grid.Column="1" Margin="0,61,0,0" FontSize="14" Foreground="White"/>
+    </Grid>
+</Window>
