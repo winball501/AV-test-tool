@@ -1,14 +1,15 @@
-﻿using System;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using MS.WindowsAPICodePack.Internal;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection.Emit;
 using System.Security;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using Microsoft.WindowsAPICodePack.Dialogs;
-using MS.WindowsAPICodePack.Internal;
 
 namespace winball501_s_antivirus_test_tool
 {
@@ -46,13 +47,17 @@ namespace winball501_s_antivirus_test_tool
                 MessageBox.Show("Please add a path before starting the test.", "No Path Selected", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-
-            startExecuteButton.IsEnabled = false;
-
-
-            await ExecuteFilesAsync(filePaths);
-
-            startExecuteButton.IsEnabled = true;
+            try
+            {
+                startExecuteButton.IsEnabled = false;
+                Thread t = new Thread(() => ExecuteFilesAsync(filePaths));
+                t.Start();
+        
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+       
         }
 
         private List<string> GetFilesFromDirectory(string path)
@@ -131,19 +136,27 @@ namespace winball501_s_antivirus_test_tool
                         percentageText.Text = $"{progress:0.00}%";
                         ScrollListBoxToBottomIfNeeded();
                     }));
-                    if(slowModeCheckBox.IsChecked == true)
+                    this.Dispatcher.Invoke(() =>
                     {
-                        await Task.Delay(TimeSpan.FromMilliseconds(700));
-                    }
+                        if (slowModeCheckBox.IsChecked == true)
+                        {
+                            Thread.Sleep(700);
+                        }
+                    });
+                  
                   
                 }
               
             }
-
-            this.Dispatcher.BeginInvoke(new Action(() =>
+            this.Dispatcher.Invoke(() =>
             {
-                fileListBox.Items.Add("Test Completed!");
-            }));
+                startExecuteButton.IsEnabled = true;
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    fileListBox.Items.Add("Test Completed!");
+                }));
+            });
+            
         }
         private void ProcessFiles(List<string> filePaths)
         {
