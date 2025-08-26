@@ -26,4 +26,5 @@ This tool was built for antivirus testing. It helps researchers and developers:
 ✔ Save time by avoiding duplicate test runs
 ✔ In testing system can be restarted or crashed, this tool provide you not lose progress.
 
-<img width="1486" height="736" alt="image" src="https://github.com/user-attachments/assets/f1c321ca-8a18-404d-9b75-e4d76ebc8825" />
+<img width="1486" height="736" alt="image" src="https://github.com/user-attachments/assets/4c075739-9398-43b6-a2e9-0272f0bc1125" />
+
