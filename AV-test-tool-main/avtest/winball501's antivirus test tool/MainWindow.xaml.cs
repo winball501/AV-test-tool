@@ -21,7 +21,7 @@ namespace winball501_s_antivirus_test_tool
     {
         private List<string> filePaths = new List<string>();
         private string selectedPath;
-  
+ 
         public MainWindow()
         {
             InitializeComponent();
@@ -31,6 +31,22 @@ namespace winball501_s_antivirus_test_tool
             }
         
             loadsettings();
+       
+        }
+        
+
+        public string stringtokenizer(string input, string token, int index)
+        {
+
+            string[] tokens = input.Split(token);
+            if (index >= 0 && index < tokens.Length)
+            {
+                return (tokens[index]);
+            }
+            else
+            {
+                return (null);
+            }
         }
         public void loadsettings()
         {
@@ -39,6 +55,11 @@ namespace winball501_s_antivirus_test_tool
             settings.Show();
             foreach (string line in lines)
             {
+                if(line.Contains("delay="))
+                {
+                   string input = stringtokenizer(line, "=", 1);
+                   settings.delayTextBox.Text = input;
+                }
 
                 if (line.Contains("savestat=0"))
                 {
@@ -96,7 +117,7 @@ namespace winball501_s_antivirus_test_tool
                 filePaths = GetFilesFromDirectory(selectedPath);
 
                 directoryLabel.Text = selectedPath;
-                filesExecutedLabel.Text = $"Executed Successfully: {0} / {filePaths.Count}";
+                filesExecutedLabel.Text = $"{0} / {filePaths.Count}";
             }
         }
 
@@ -267,20 +288,25 @@ namespace winball501_s_antivirus_test_tool
                 {
 
 
-                    this.Dispatcher.BeginInvoke(new Action(() =>
+                    await this.Dispatcher.BeginInvoke(new Action(() =>
                     {
-                        filesExecutedLabel.Text = $"Executed Successfully: {executed} / {totalFiles}";
-                        accessDeniedLabel.Text = $"Not Executed May Blocked By Antivirus: {notexecuted}";
+                        filesExecutedLabel.Text = $"{executed} / {totalFiles}";
+                        accessDeniedLabel.Text = $"{notexecuted}";
                         double progress = ((double)notexecuted / totalFiles) * 100;
                         progressBar.Value = progress;
                         percentageText.Text = $"{progress:0.00}%";
                         ScrollListBoxToBottomIfNeeded();
                     }));
-                    this.Dispatcher.Invoke(() =>
+                    await this.Dispatcher.Invoke(async () =>
                     {
                         if (slowModeCheckBox.IsChecked == true)
                         {
-                            Thread.Sleep(700);
+                            await Task.Delay(700);
+                        }
+                        if (settings.delayTextBox.Text.Length > 0)
+                        {
+                            await Task.Delay(int.Parse(settings.delayTextBox.Text));
+                           
                         }
                     });
 
@@ -392,8 +418,8 @@ namespace winball501_s_antivirus_test_tool
 
             progressBar.Value = 0;
             percentageText.Text = "0%";
-            filesExecutedLabel.Text = "Executed Successfully: 0 / 0";
-            accessDeniedLabel.Text = "Not Executed May Blocked By Antivirus: 0";
+            filesExecutedLabel.Text = "0 / 0";
+            accessDeniedLabel.Text = "0";
             directoryLabel.Text = "No directory selected";
             fileListBox.Items.Clear();
             filePaths.Clear();
