@@ -25,6 +25,6 @@ This tool was built for antivirus testing. It helps researchers and developers:
 ✔ Evaluate antivirus performance against test samples
 ✔ Save time by avoiding duplicate test runs
 ✔ In testing system can be restarted or crashed, this tool provide you not lose progress.
-
-<img width="1486" height="736" alt="image" src="https://github.com/user-attachments/assets/4c075739-9398-43b6-a2e9-0272f0bc1125" />
+<img width="1068" height="585" alt="image" src="https://github.com/user-attachments/assets/bcf4681c-cc10-4141-a8af-011a88a9aa84" />
+/>
 
