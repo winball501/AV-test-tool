@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,6 +36,19 @@ namespace winball501_s_antivirus_test_tool
                 {
                     for (int i = 0; i < lines.Length; i++)
                     {
+                        if (lines[i].StartsWith("delay=") && delayTextBox.Text.Length > 0)
+                        {
+
+                            lines[i] = "delay=" + delayTextBox.Text;
+                        }
+
+                        if (saveStatusCheckBox.IsChecked == true)
+                        {
+                            if (lines[i].Contains("savestat=0"))
+                            {
+                                lines[i] = "savestat=1";
+                            }
+                        }
                         if (saveStatusCheckBox.IsChecked == true)
                         {
                             if (lines[i].Contains("savestat=0"))
@@ -109,6 +123,8 @@ namespace winball501_s_antivirus_test_tool
                                 lines[i] = "all=0";
                             }
                         }
+                     
+
 
                     }
                     File.Delete(settingspath);
@@ -125,17 +141,24 @@ namespace winball501_s_antivirus_test_tool
                 else
                 {
                     StreamWriter writer = new StreamWriter(settingspath, append: true);
+                    if (delayTextBox.Text.Length > 0)
+                    {
+                         writer.WriteLine("delay=" +  delayTextBox.Text);
+                    } else
+                    {
+                         writer.WriteLine("delay=" + 0);
+                    }
                     if (saveStatusCheckBox.IsChecked == true)
                     {
-                     
-                            writer.WriteLine("savestat=1");
-                       
+
+                        writer.WriteLine("savestat=1");
+
                     }
                     else
                     {
-                      
-                            writer.WriteLine("savestat=0");
-                        
+
+                        writer.WriteLine("savestat=0");
+
                     }
                     if (noLogRadio.IsChecked == true)
                     {
@@ -223,6 +246,30 @@ namespace winball501_s_antivirus_test_tool
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
+        }
+        private static readonly Regex _numericRegex = new Regex("^[0-9]+$");
+
+        private void DelayTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !_numericRegex.IsMatch(e.Text);
+        }
+
+        private void DelayTextBox_Pasting(object sender, DataObjectPastingEventArgs e)
+        {
+            if (e.DataObject.GetDataPresent(typeof(string)))
+            {
+                string text = (string)e.DataObject.GetData(typeof(string));
+                if (!_numericRegex.IsMatch(text))
+                    e.CancelCommand();
+            }
+            else
+            {
+                e.CancelCommand();
+            }
+        }
+        private void delayTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
